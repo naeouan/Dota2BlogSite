@@ -20,6 +20,10 @@ Technologies Used: List all technologies and tools used in the project:
 - JSON Web Tokens
 - React Router DOM
 - React Quill
+- bcrypt
+- cors
+- multer
+- cookie-parser
 
 
 
@@ -31,6 +35,9 @@ cd client
 npx create-react-app client
 npm install react-router-dom
 npm install react-quill
+npm install react-scripts
+npm install date-fns
+npm install web-vitals
 
 Backend Setup
 cd api
@@ -38,6 +45,10 @@ npm install express
 npm install cors
 npm install mongoose
 npm install jsonwebtoken
+npm install bcrypt
+npm install dotenv
+npm install cookie-parser
+npm install multer
 
 
 If react-quill is incompatible: Downgrade react to 18.2.0
@@ -60,10 +71,10 @@ api/…:
 Index.js
 - checks if a valid token is provided in the request cookies to check if user is authenticated.
 - registers new user by saving their username and hashed password in the database
-- route checks user credentials and, if correct, generates and sends JWT token back to the user
-- route retrieves the logged-in user’s profile if they provide a valid token
+- checks user credentials and, if correct, generates and sends JWT token back to the user
+- retrieves the logged-in user’s profile if they provide a valid token
 - logs out user by clearing JWT token from the cookies
-- route allows authenticated users to create a post, including uploading a file.
+- allows authenticated users to create a post, including uploading a file.
 - allows an authenticated user to update an existing post (only if they are the author).
 - retrieves a list of posts, sorted by creation date.
 - allows the author of a post to delete their post.
